@@ -1,6 +1,6 @@
 const request = require('request');
 const cheerio = require('cheerio');
-const jsonfile = require("jsonfile");
+const jsonfile = require('jsonfile');
 
 request('https://cdn.adimo.co/clients/Adimo/test/index.html', function (error, response, body) {
     console.error('error:', error); // Print the error if one occurred
