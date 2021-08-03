@@ -16,9 +16,9 @@ request('https://cdn.adimo.co/clients/Adimo/test/index.html', function (error, r
         // use replace() to remove the pound sign from the price
 
         var title = $(elem).find('h1').text();
-        var img =  $(elem).find('img').attr("src");
-        var oldPrice = $(elem).find('.oldPrice').text().replace("£", "");
-        var price = $(elem).find('.price').text().replace("£", "");
+        var img =  $(elem).find('img').attr('src');
+        var oldPrice = $(elem).find('.oldPrice').text().replace('£', '');
+        var price = $(elem).find('.price').text().replace('£', '');
 
         // create an object for each item 
         
@@ -42,10 +42,10 @@ request('https://cdn.adimo.co/clients/Adimo/test/index.html', function (error, r
 
     // assign variable to item, then find the number of items by length
 
-    let item = $("div.item");
+    let item = $('div.item');
     item = item.length;
 
-    let itemTotal = "The total no. of items is: " + item;
+    let itemTotal = 'The total no. of items is: ' + item;
 
 
     // 3. The average price of each item
@@ -53,9 +53,9 @@ request('https://cdn.adimo.co/clients/Adimo/test/index.html', function (error, r
 
     let priceCut = [];
 
-    $(".price").each(function (i, e) {
+    $('.price').each(function (i, e) {
 
-      priceCut[i] = $(this).text().replace("£", "");
+      priceCut[i] = $(this).text().replace('£', '');
 
     });
 
@@ -68,17 +68,17 @@ request('https://cdn.adimo.co/clients/Adimo/test/index.html', function (error, r
     
     var avg = sum/priceCut.length;
     
-    var averagePrice = ( "The sum of all the elements is: " + sum + " The average is: " + avg );
+    var averagePrice = ( 'The sum of all the elements is: ' + sum + ' The average is: ' + avg );
 
 
     // FOR JSON OUTPUT 
 
         // removes the page header h1 from the array
-        let header = $("h1.page-header").remove();
+        let header = $('h1.page-header').remove();
 
         var title2 = {};
     
-        $("h1").each(function (i, e) {
+        $('h1').each(function (i, e) {
           title2[i] = $(this).text();
         });
     
@@ -86,7 +86,7 @@ request('https://cdn.adimo.co/clients/Adimo/test/index.html', function (error, r
     
         var img2 = {};
     
-        $("img").each(function (i, e) {
+        $('img').each(function (i, e) {
           img2[i] = $(this).attr("src");
         });
     
@@ -94,7 +94,7 @@ request('https://cdn.adimo.co/clients/Adimo/test/index.html', function (error, r
     
         var price2 = {};
     
-        $(".price").each(function (i, e) {
+        $('.price').each(function (i, e) {
           price2[i] = $(this).text();
         });
     
@@ -102,7 +102,7 @@ request('https://cdn.adimo.co/clients/Adimo/test/index.html', function (error, r
     
         var oldPrice2 = {};
     
-        $(".oldPrice").each(function (i, e) {
+        $('.oldPrice').each(function (i, e) {
           oldPrice2[i] = $(this).text();
         });
 
@@ -179,7 +179,7 @@ request('https://cdn.adimo.co/clients/Adimo/test/index.html', function (error, r
       data.items = all;
       data.averagePrice = averagePrice;
       data.itemTotal = itemTotal;
-      jsonfile.writeFile("data.json", data);
+      jsonfile.writeFile('data.json', data);
 
 });
 
